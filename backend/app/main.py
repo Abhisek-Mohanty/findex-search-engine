@@ -1,13 +1,54 @@
-from fastapi import FastAPI
+from itertools import cycle
+import json
+import argparse
+import sys
 
-app = FastAPI()
+from typing import Callable
+from fastapi import FastAPI, Depends, HTTPException, Response
+from fastapi.exceptions import RequestValidationError
+from starlette.exceptions import HTTPException
+
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+# from app.core.config import API_PREFIX, ENVIRONMENT, URL_PREFIX, WEBHOOK_PREFIX, WS_PREFIX
+# from app.core.config import ALLOWED_HOSTS, DEBUG, PROJECT_NAME, VERSION ,DOCURLS
+from app.core.events import create_start_app_handler, create_stop_app_handler
+
+def get_application() -> FastAPI:
+    
+    middleware = [
+            Middleware(
+            CORSMiddleware,
+            allow_origins=["*"],  # IMPORTANT
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
+    ]
+
+    application = FastAPI(
+        title="Findex The Search Engine",
+        debug=True,
+        version=1,
+        docs_url='/docs',
+        redoc_url="/redoc",   # separate URL
+        middleware=middleware
+    )
+
+    # Startup / Shutdown events
+    application.add_event_handler(
+        "startup",
+        create_start_app_handler(application)
+    )
+    application.add_event_handler(
+        "shutdown",
+        create_stop_app_handler(application)
+    )
+
+    return application
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str | None = None):
-    return {"item_id": item_id, "q": q}
+app = get_application()
