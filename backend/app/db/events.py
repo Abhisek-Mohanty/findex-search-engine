@@ -31,7 +31,7 @@ async def close_db_connection(app: FastAPI) -> None:
     logger.info("Connection closed")
 
 
-async def getDBConnection():
+async def getDBConnection(): 
     try:
         if DBSession.db:
             return oDBSession.db 
