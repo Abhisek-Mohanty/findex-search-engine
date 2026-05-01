@@ -1,0 +1,162 @@
+:host {
+  --primary-purple: #5d46e1;
+  --bg-gradient: radial-gradient(circle at top, #f8f9ff 0%, #f0f2f9 100%);
+  --text-dark: #1a1a1a;
+}
+
+.search-container {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  margin: 20px 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: var(--primary-purple);
+  letter-spacing: -1px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  color: var(--primary-purple);
+  border-bottom: 2px solid var(--primary-purple);
+}
+
+/* Hero Section */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  color: var(--primary-purple);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  font-style: italic;
+  color: var(--primary-purple);
+  font-weight: 400;
+}
+
+/* Search Bar Styling */
+.search-box-wrapper {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.search-input-container input {
+  flex: 1;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.search-btn {
+  background: var(--primary-purple);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shortcut {
+  color: #aaa;
+  margin-right: 15px;
+  font-size: 0.9rem;
+}
+
+/* Chips/Suggestions */
+.suggestions {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chip {
+  background: white;
+  border: 1px solid #eee;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--primary-purple);
+  background: #fdfdff;
+}
+
+/* Footer */
+footer {
+  padding: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #999;
+}
