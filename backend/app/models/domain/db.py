@@ -1,6 +1,4 @@
 from re import A
+from app.models.domain.crawl import Crawl
 
-
-
-# Delcate Models
-User            = User
+Crawl = Crawl
