@@ -14,6 +14,10 @@ public searchQuery: string = '';
 public typedText: string = '';
 private fullText: string = "Findex.";
 
+constructor(){
+  
+}
+
 ngOnInit(){
   this.typeEffect()
 }
@@ -31,5 +35,9 @@ ngOnInit(){
       console.log(this.typedText);
       await sleep(100); 
     }
+  }
+
+  getCrawl(){
+
   }
 }
