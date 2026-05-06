@@ -25,7 +25,7 @@ export class ConstantService {
     return [url, queryString].join('?');
   }
 
-get(params?: any) {
+getCrawl(params?: any) {
   return this.http.get(this.getUrl("crawl"), {
     params: params,
     observe: 'response'

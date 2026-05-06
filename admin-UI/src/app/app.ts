@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ConstantService } from "./constant-service"
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,15 @@ public searchQuery: string = '';
 public typedText: string = '';
 private fullText: string = "Findex.";
 
-constructor(){
+constructor(
+  private constantService = ConstantService
+){
   
 }
 
 ngOnInit(){
   this.typeEffect()
+  this.constantService.getCrawl({})
 }
 
 
