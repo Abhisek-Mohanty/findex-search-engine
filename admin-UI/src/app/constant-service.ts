@@ -8,7 +8,7 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class ConstantService {
-  API_URL: string = environment.API_URL;
+ public API_URL: string = environment.API_URL;
   constructor(
     private http: HttpClient
   ){

@@ -15,15 +15,15 @@ public searchQuery: string = '';
 public typedText: string = '';
 private fullText: string = "Findex.";
 
-constructor(
-  private constantService = ConstantService
-){
-  
+constructor(private constantService: ConstantService){
 }
 
 ngOnInit(){
   this.typeEffect()
-  this.constantService.getCrawl({})
+  this.constantService.getCrawl({}).subscribe((res)=>{
+    console.log("service file");
+    console.log(res);
+  })
 }
 
 

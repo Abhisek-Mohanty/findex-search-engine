@@ -19,7 +19,7 @@ def get_application() -> FastAPI:
     middleware = [
             Middleware(
             CORSMiddleware,
-            allow_origins=["*"],  # IMPORTANT
+            allow_origins=["*"],  
             allow_credentials=True,
             allow_methods=["*"],
             allow_headers=["*"],
@@ -31,7 +31,7 @@ def get_application() -> FastAPI:
         debug=True,
         version=1,
         docs_url='/docs',
-        redoc_url="/redoc",   # separate URL
+        redoc_url="/redoc",  
         middleware=middleware
     )
 
