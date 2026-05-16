@@ -31,5 +31,6 @@ MYSQL_USER:str = config("MYSQL_USER",cast=str,default="root")
 MYSQL_PWD:str  = config("MYSQL_PWD",cast=str,default="")
 MYSQL_DB:str   = config("MYSQL_DB",cast=str,default="")
 DEBUG: bool = config("DEBUG", cast=bool, default=False)
+SERVER_DEFAULT_OFFSET:str = config("SERVER_DEFAULT_OFFSET",cast=str,default="")
 
 

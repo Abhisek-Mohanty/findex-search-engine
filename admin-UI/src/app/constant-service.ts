@@ -26,7 +26,7 @@ export class ConstantService {
   }
 
 getCrawl(params?: any) {
-  return this.http.get(this.getUrl("crawl"), {
+  return this.http.get(this.getUrl("document/crawl"), {
     params: params,
     observe: 'response'
   }).pipe(

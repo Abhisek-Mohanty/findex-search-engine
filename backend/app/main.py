@@ -10,6 +10,7 @@ from starlette.exceptions import HTTPException
 
 from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
+from app.api.routes.api import router as url_router
 from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 from app.core.events import create_start_app_handler, create_stop_app_handler
@@ -34,6 +35,8 @@ def get_application() -> FastAPI:
         redoc_url="/redoc",  
         middleware=middleware
     )
+
+    application.include_router(url_router)
 
     # Startup / Shutdown events
     application.add_event_handler(
