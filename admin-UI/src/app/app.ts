@@ -36,12 +36,15 @@ ngOnInit(){
     
     for (let i = 0; i <= this.fullText.length; i++) {
       this.typedText = this.fullText.substring(0, i);
-      console.log(this.typedText);
       await sleep(100); 
     }
   }
 
   getCrawl(){
+  this.constantService.getCrawl({}).subscribe((res)=>{
+    console.log("service file");
+    console.log(res);
+  })
 
   }
 }

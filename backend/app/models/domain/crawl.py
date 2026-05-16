@@ -12,6 +12,10 @@ class Crawl(Base):
     pageURL = Column("pageURL", String)
     metaData = Column("metaData", String)
     header = Column("header", String)
+    lastUpdatedAt = Column("lastUpdatedAt", DateTime)
+    createdAt = Column("createdAt", DateTime)
+
+
     
 
 

@@ -32,7 +32,7 @@ getCrawl(params?: any) {
   }).pipe(
     map((resp: any) => {
       const count = resp.headers.get('X-Total-Count');
-      return { count: parseInt(count, 10), data: resp.body.data };
+      return resp.body.data;
     })
   );
 }
